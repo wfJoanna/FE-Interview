@@ -58,3 +58,15 @@ Object.prototype.toString.call(Object) // "[object Function]"
 Object.prototype.toString.call(Object.prototype) // "[object Object]"</code></pre>
 </details>
 
+
+#### 判断一个变量的类型，写个方法用Object.prototype.toString判断传入数据的类型
+
+<details>
+    <summary>展开</summary>
+    <pre><code>const type = function (obj) {
+	const str = Object.prototype.toString.call(obj);
+	return str.match(/\[object (.*?)\]/)[1].toLowerCase(); // (.*?)表示懒惰匹配任意个任意字符
+}
+console.log(type(true)); // 'boolean'</code></pre>
+</details>
+
