@@ -1,9 +1,0 @@
-Number: NaN
-String
-Boolean
-Undefined
-Object: Null, Array, Date
-Function
-Symbol
-
-当然，如果用typeof，返回的值都是小写的
