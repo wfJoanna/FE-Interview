@@ -55,10 +55,7 @@
     <p>
       	下面随便举几个例子：
     </p>
-</details>
-
-```javascript
-var s='123';
+    <pre><code>var s='123';
 var a;
 // 下面就不是合法的js代码了，这里只为举例说明
 typeof s === 'string'
@@ -73,8 +70,8 @@ typeof new Function() === 'function'
 typeof function a(){} === 'function'
 typeof Symbol() === 'symbol'
 typeof Array === 'function'
-typeof Array.prototype === 'object'
-```
+typeof Array.prototype === 'object'</code></pre>
+</details>
 
 
 
