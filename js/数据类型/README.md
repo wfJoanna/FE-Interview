@@ -20,6 +20,7 @@
         <li>RegExp</li>
         <li>JSON</li>
         <li>Math</li>
+        <li>……</li>
     </ol>
     <p>说明一下：</p>
     <ul>
@@ -29,6 +30,7 @@
         <li>null是空类型，但tyepof null返回object，但其实际行为却和object完全不同</li>
     </ul>
 </details>
+
 
 
 #### 基本数据类型和引用数据类型的区别？
@@ -86,6 +88,55 @@ typeof Array.prototype === 'object'</code></pre>
         <li>布尔值false</li>
         <li>NaN</li>
         <li>空字符串 "" 或 ''</li>
+    </ol>
+</details>
+
+
+#### 深拷贝和浅拷贝是什么？（有什么区别？）
+
+<details>
+    <summary>展开</summary>
+    <p>
+        浅拷贝：对于基本数据类型，浅拷贝是对值的复制；对于引用数据类型，浅拷贝是对对象地址的复制，当拷贝的对象发生改变时，原对象也会发生改变
+    </p>
+    <p>
+        深拷贝：拷贝对象时，在堆中开辟新的内存区域，两个对象对应不同的地址，修改其中一个对象，不会对另一个对象造成改变
+    </p>
+</details>
+
+
+
+#### 请手动实现一个深拷贝
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>法一：用JSON做一次中转，但有很多漏洞，比如值为undefined的属性、值为symbol的属性、所有方法在序列化过程中会被忽略<pre><code>function deepCopy(obj) {
+    var tmp, result;
+    tmp = JSON.stringify(obj);
+    result = JSON.parse(tmp);
+    return result;
+}</code></pre></li>
+        <li>法二：Array.prototype.slice，但只适用于array<pre><code>let array = [1, 2, 3];
+let array1 = array.slice();
+console.log(array1);</code></pre></li>
+        <li>法三：Array.prototype.concat，但只适用于array<pre><code>let array = [1, 2, 3];
+let array1 = [].concat(array);
+console.log(array1);</code></pre></li>
+        <li>法四：依次复制源对象的键/值到目标对象，但仅适用于object和array<pre><code>function deepCopy(obj) {
+    var result = typeof obj.splice === 'function' ? [] : {}; //因为splice是数组独有的方法
+    if (obj && typeof obj === 'object') {
+        for (let key in obj) {
+            if (obj[key] && typeof obj[key] === 'object') {
+                result[key] = deepClone(obj[key]); //如果对象的属性值为object的时候，递归调用deepCopy
+            } else {
+                result[key] = obj[key]; //如果对象的属性值不为object的时候，直接复制参数对象的每一个键/值到新对象对应的键/值中
+            }
+        }
+        return result;
+    }
+    return obj; //直接返回源对象
+}</code></pre></li>
     </ol>
 </details>
 

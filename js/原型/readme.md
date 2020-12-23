@@ -70,3 +70,31 @@ Object.prototype.toString.call(Object.prototype) // "[object Object]"</code></pr
 console.log(type(true)); // 'boolean'</code></pre>
 </details>
 
+
+#### 说一下对原型链的理解，画一个经典的原型链图示
+
+<details>
+    <summary>展开</summary>
+    <p>
+        理解一下下面的图，大概画一下复述一下就行了
+    </p>
+    <p>
+        其实少了实例对象的constructor，也就是指向构造函数的指针
+    </p>
+    <img src='prototype.jpg'>
+</details>
+
+
+
+#### 说一下构造函数、原型、实例的关系
+
+<details>
+    <summary>展开</summary>
+    <p>
+        每个构造函数（constructor）都有一个原型对象（prototype），原型对象都包含一个指向构造函数的指针（constructor），而实例（instance）都包含一个指向原型对象的内部指针（__proto__）
+    </p>
+    <p>
+        你可以用自己的话说嘛，不一定非要照着上面那样。只要记着那张图，脑子里想着那张图就行了
+    </p>
+</details>
+
