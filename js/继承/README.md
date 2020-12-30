@@ -68,10 +68,10 @@ console.log(instance.getFatherValue()); //true</code></pre>
         缺点：
     </p>
     <ol>
-        <li>在创建子类的实例时，没有办法向父类的构造函数传参（构造函数继承方式可以）</li>
         <li>父类的引用类型属性将被所有的子类实例共享，一个子类实例修改这种属性，就会影响所有的实例</li>
     </ol>
 </details>
+
 
 
 

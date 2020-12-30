@@ -14,9 +14,10 @@
 <details>
     <summary>展开</summary>
     <p>
-        按照我现在的简单理解，就是函数内部支持嵌套函数，嵌套函数可以访问上一层的作用域中的函数变量，也就是说内部函数可以引用外部函数的参数和局部变量
+        按照我现在的简单理解，就是JS中函数内部支持嵌套函数，内部函数可以引用外部函数的参数和局部变量
     </p>
 </details>
+
 
 
 
@@ -68,8 +69,7 @@ var a = function () {
 }
 var a1 = a();
 console.log(a1.getName()); //a
-a1.setName(1);
-console.log(a1.getName()); //Invalid name
+a1.setName(1); //Invalid name
 a1.setName('b');
 console.log(a1.getName()); //b</code></pre></li>
         <li>从函数外部读到函数内部的变量<pre><code>//法一：利用return

@@ -25,7 +25,7 @@ function myFun(item, key) {
 }</code></pre>
         </li>
         <li>
-            <b>for...of</b>：创建一个循环来迭代可迭代的对象
+            <b>for...of</b>：遍历可迭代的数据结构
             <p>
                 可迭代的数据结构：Arrays（数组），Strings（字符串），Maps（映射），Sets（集合）等，不包括普通对象
             </p>
