@@ -64,50 +64,13 @@ bar();</code></pre>
 
 <details>
     <summary>展开</summary>
-    <ol>
-        <li>封装<pre><code>var a = {
-    name: 'a'
-};
-a.name = 1; //用户就可能随意修改属性，不能确保用户修改后的属性值是否合法
----不合法的分隔线---
-var a = function () {
-    var name = 'a';
-    return {
-        setName: function (newValue) {
-            if (typeof newValue === 'string') {
-                name = newValue;
-            }
-            else throw new Error('Invalid name');
-        },
-        getName: function () {
-            return name;
-        }
-    }
-}
-var a1 = a();
-console.log(a1.getName()); //a
-a1.setName(1); //Invalid name
-a1.setName('b');
-console.log(a1.getName()); //b</code></pre></li>
-        <li>从函数外部读到函数内部的变量<pre><code>//法一：利用return
-function a1() {
-    var name = 'a1';
-    return name;
-}
-var name1 = a1();
-console.log(name1);
-//法二：利用闭包
-function a2() {
-    var name = 'a2';
-    return function () {
-        return name;
-    };
-}
-var name2 = a2();
-console.log(name2());</code></pre></li>
-    </ol>
+    <p>
+        this有点像动态作用域，this是运行时进行绑定的，并不是在编写时绑定，this的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式；而词法作用域是在书写代码或者说定义时就确定的
+    </p>
+    <p>
+        （其实真实的答案并不是向上面那样的，但是正确答案太复杂了我现在搞不懂，所以就先像上面那样简单回答一下吧）
+    </p>
 </details>
-
 
 
 

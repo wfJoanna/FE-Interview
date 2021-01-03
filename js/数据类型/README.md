@@ -2,45 +2,32 @@
 
 <details>
     <summary>展开</summary>
+    <p><b>基本数据类型：</b></p>
+    <ol>
+        <li>number</li>
+        <li>string</li>
+        <li>boolean</li>
+        <li>undefined</li>
+        <li>null</li>
+        <li>symbol</li>
+    </ol>
+    <p><b>引用数据类型：</b></p>
+    <ol>
+        <li>Object</li>
+        <li>Array</li>
+        <li>Function</li>
+        <li>Date</li>
+        <li>RegExp</li>
+        <li>JSON</li>
+        <li>Math</li>
+        <li>……</li>
+    </ol>
+    <p>说明一下：</p>
     <ul>
-        <li>
-            <b>for...in</b>：循环遍历对象的属性
-            <p>
-                比如：
-            </p>
-            <pre><code>var arr = [10, 11, 12];
-for (let key in arr) {
-    console.log(key); // 0 1 2
-}</code></pre>
-        </li>
-        <li>
-        	<b>forEach</b>：forEach()是数组的方法，参数为回调函数。forEach()调用数组的每个元素，并将元素的值和索引传递给回调函数
-            <p>
-                比如：
-            </p>
-            <pre><code>var arr = [10, 11, 12];
-arr.forEach(myFun);
-function myFun(item, key) {
-    console.log(key + ' ' + item);
-}</code></pre>
-        </li>
-        <li>
-            <b>for...of</b>：遍历可迭代的数据结构
-            <p>
-                可迭代的数据结构：Arrays（数组），Strings（字符串），Maps（映射），Sets（集合）等，不包括普通对象
-            </p>
-            <p>
-                比如：
-            </p>
-            <pre><code>var arr = [10, 11, 12];
-for (let value of arr) {
-    console.log(value);
-}</code></pre>
-        </li>
-    </ul>
-</details>
-
-
+        <li>number包含整数、小数、NaN</li>
+        <li>boolean只包含true和false</li>
+        <li>引用数据类型其实都包含于object类型，如果用typeof的话，都是返回object（除了Function）</li>
+        <li>null是空类型，但tyepof null返回object，但其实际行为却和object完全不同</li>
 
 
 #### 基本数据类型和引用数据类型的区别？
@@ -84,8 +71,6 @@ typeof Symbol() === 'symbol'
 typeof Array === 'function'
 typeof Array.prototype === 'object'</code></pre>
 </details>
-
-
 
 
 #### 布尔值为false的情况？
