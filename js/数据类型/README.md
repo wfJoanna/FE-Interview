@@ -28,6 +28,7 @@
         <li>boolean只包含true和false</li>
         <li>引用数据类型其实都包含于object类型，如果用typeof的话，都是返回object（除了Function）</li>
         <li>null是空类型，但tyepof null返回object，但其实际行为却和object完全不同</li>
+</details>
 
 
 #### 基本数据类型和引用数据类型的区别？
