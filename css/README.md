@@ -56,16 +56,3 @@
         <li>硬要说的话，还有inherit</li>
     </ol>
 </details>
-
-
-#### link和@import的区别？
-
-<details>
-    <summary>展开</summary>
-    <ol>
-        <li>link是在html头部中引入外部的css文件，@import是在css部分引入外部css文件，比如说在style标签中</li>
-        <li>link是在页面载入的同时加载，@import是在页面完全载入后加载</li>
-        <li>还有其他的，暂时可以不了解</li>
-	</ol>
-</details>
-
