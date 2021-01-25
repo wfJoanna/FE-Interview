@@ -55,3 +55,15 @@
 </details>
 
 
+#### html5有哪些新特性？
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>语义化标签：header、footer、nav、article、aside、details、summary</li>
+        <li>新的表单input输入类型：color、date、email、tel</li>
+        <li>视频和音频元素：audio、video</li>
+        <li>canvas</li>
+    </ol>
+</details>
+

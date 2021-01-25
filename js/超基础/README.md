@@ -88,3 +88,18 @@ for (const item of Object.entries(obj)) {
     </p>
 </details>
 
+
+#### ES6有哪些新特性？
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>let、const</li>
+        <li>箭头函数</li>
+        <li>Symbol数据类型</li>
+        <li>Set和Map</li>
+        <li>Promise</li>
+        <li>class关键字</li>
+    </ol>
+</details>
+

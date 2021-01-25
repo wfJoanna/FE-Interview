@@ -162,3 +162,120 @@
     </ul>
 </details>
 
+
+#### 客户端发送http请求过程
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>域名解析</li>
+        <li>发起TCP3次握手</li>
+        <li>建立TCP连接后发起http请求</li>
+        <li>服务器响应http请求，浏览器得到http代码</li>
+        <li>浏览器解析html代码，并请求html代码中的资源（如css、js、图片等）</li>
+        <li>浏览器对页面进行渲染呈现给用户</li>
+    </ol>
+</details>
+
+
+
+#### TCP3次握手
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>客户端向服务端发送连接请求报文段</li>
+        <li>服务端收到连接请求报文段后，如果同意连接，则会发送一个应答</li>
+        <li>当客户端收到连接同意的应答后，还要向服务端发送一个确认报文段，表示：服务端发来的连接同意应答已经成功收到</li>
+    </ol>
+</details>
+
+
+
+#### 提升页面性能的方法
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>使用cdn</li>
+        <li>减少http请求和冗余数据</li>
+        <li>压缩文件、压缩图片</li>
+        <li>图片懒加载</li>
+        <li>引入http2.0</li>
+        <li>http持久连接</li>
+    </ol>
+</details>
+
+
+
+
+#### encoding头部有哪些编码方式？
+
+<details>
+    <summary>展开</summary>
+    <ul>
+        <li>ASCII：美国19世纪60年代建立英文和二进制的关系时定制的编码规范，仅用于英文</li>
+        <li>Unicode：通用字符集，包含了所有的字符</li>
+        <li>UTF-8：互联网上使用最广的一种Unicode的实现方式</li>
+        <li>GBK/GBK2312/GBK18020：GBK和GBK2312是针对简体字的编码，GBK更广。GBK18030是用于繁体字的编码</li>
+    </ul>
+</details>
+
+
+
+#### utf-8和asc码有什么区别？
+
+<details>
+    <summary>展开</summary>
+    <p>
+        UTF-8:
+        <ul>
+            <li>UTF-8是Unicode的一种实现方式，还包括UTF-16和UTF-32</li>
+            <li>UTF-8兼容ASCII</li>
+    	</ul>
+    </p>
+	<p>
+        ASC码:
+        <ul>
+            <li>仅用于英语，是美国信息交换标准代码</li>
+		</ul>
+	</p>
+</details>
+
+
+#### 简要说一下渲染的过程
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>根据HTML结构生成DOM树</li>
+        <li>根据CSS生成CSSOM</li>
+        <li>将DOM和CSSOM整合形成Render Tree</li>
+        <li>根据Render Tree开始渲染和展示</li>
+    </ol>
+    <ul>
+        <li>遇到script时，会执行并阻塞渲染</li>
+        <li>解析过程中如果遇到link和script这种外链加载CSS和JS的标签，浏览器会异步下载</li>
+    </ul>
+</details>
+
+
+
+#### 为何要将CSS放在HTML头部？
+
+<details>
+    <summary>展开</summary>
+    这样会让浏览器尽早拿到CSS尽早生成CSSOM，然后在解析HTML之后可一次性生成最终的Render Tree，渲染一次即可。如果CSS放在HTML底部，会出现渲染卡顿的情况，影响性能和体验
+</details>
+
+
+
+#### 为何要将JS放在HTML底部？
+
+<details>
+    <summary>展开</summary>
+    因为浏览器渲染和JS执行共用一个线程，遇到script标签就停止渲染，执行JS代码，待script内容执行完之后，浏览器继续渲染。<br>
+    所以JS放在底部可以保证让浏览器优先渲染完现有的HTML内容，让用户先看到内容，体验好。<br>
+    另外，JS执行如果涉及DOM操作，得等待DOM解析完成才行。
+</details>
+

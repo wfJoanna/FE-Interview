@@ -235,3 +235,26 @@ console.log(a['-20']); // 8
 // target：被代理的目标对象
 // property：要读取的属性名称</code></pre>
 </details>
+
+
+#### 请实现一个uniq函数，实现数组去重
+
+<details>
+    <summary>展开</summary>
+    <ol>
+        <li>法一：用Set<pre><code>function uniq(array) {
+    return new Set(array)
+}</code></pre></li>
+        <li>法二：用indexOf<pre><code>function uniq(array){
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+        if (result.indexOf(array[i]) === -1){
+            result.push(array[i]);
+        }
+    }
+    return result;
+}</code></pre></li>
+    </ol>
+</details>
+
+
