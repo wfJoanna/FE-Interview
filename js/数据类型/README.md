@@ -134,7 +134,12 @@ console.log(array1);</code></pre></li>
     }
     return obj; //直接返回源对象
 }</code></pre></li>
+        <li>法五：Object.assign<pre><code>let target = {};
+let source = {a: '123', b: {name: 'dc'}};
+Object.assign(target, source);
+console.log(target, source);</code></pre></li>
     </ol>
 </details>
+
 
 
